@@ -1,0 +1,11 @@
+h3.panel-heading{
+	margin:0;
+}
+
+ul.navbar-nav{
+	list-style-type: none;
+}
+
+ul.navbar > li{
+	margin: 0 auto;
+}

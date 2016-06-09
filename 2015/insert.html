@@ -1,0 +1,40 @@
+
+
+<html>
+<head>
+	<title>Insert data</title>
+	<link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body>
+	<div class="container">
+		<form action="insert.php" method = "POST">
+			<div class = "form-group">		
+				Item name: 
+				<input type="text" name="name" placeholder="Item name" class = "form-control">
+			</div>		
+			<div class="form-group">
+				Room number:
+				<input type="text" name="room" placeholder= "room" class="form-control">
+			</div>
+			Storage type:
+			<select name="storage">
+				<option value="shelf">Shelf</option>
+				<option value="drawer">Drawer</option>
+			</select>
+			<div class="form-group">
+				Container letter:
+				<input type="text" name="container-letter" placeholder="letter" class="form-control">
+			</div>
+			<div class="form-group">
+				Serial Number:
+				<input type="text" name="srnumber" placeholder="serial number">
+			</div>
+			<div class="form-group">
+				Description:
+				<input type="text" name="description" placeholder="short description">
+			</div>
+			<button type="submit" class="btn btn-default">Submit</button>
+		</form>
+	</div>
+</body>
+</html>
