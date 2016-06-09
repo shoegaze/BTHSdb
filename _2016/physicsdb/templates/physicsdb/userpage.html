@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>user page</title>
+
+	{% load staticfiles %}
+    <link rel="stylesheet" href="{% static "physicsdb/css/reset.css" %}" media="screen" charset="utf-8">
+  </head>
+  <body>
+  	<h1>User: {{ user.username }}</h1>
+  	{% if error_message %}<h1>{{ error_message }}</h1>{% endif %}
+  	<div><a href="..">overview</a></div>
+  	<div class="center" style="width:500px;margin:40px auto;border:1px solid black;padding:10px;">
+  		{% if taken_out %}
+  			{% for equip in taken_out %}
+  				<div>Type: {{ equip.equipment_name }}</div>
+	  			<div>ID: {{ equip.equipment_id }}</div>
+	  			<div>Reg. date: {{ equip.register_date }}</div>
+	  			<form action="/give_back/" method="post">
+	  				{% csrf_token %}
+	  				<input type="hidden" value="{{ equip.equipment_id }}" name="equipment_id">
+	  				<input type="submit" value="give back" style="margin-top:15px;">
+	  			</form>
+  			{% endfor %}
+  		{% endif %}
+  	</div>
+  </body>
+</html>
