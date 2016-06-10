@@ -1,0 +1,1 @@
+web: gunicorn bthsdb.wsgi
