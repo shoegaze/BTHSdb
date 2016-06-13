@@ -22,6 +22,7 @@ Current Features:
 
 Todo:
 -----------------
+* Change admin password(!) 
 * Make table columns sortable
 * Better equipment details 
 * Better admin control panel
