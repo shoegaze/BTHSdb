@@ -26,3 +26,4 @@ Todo:
 * Better admin control panel
 * User sign up system
 * Redirect to /database/
+* Upload to webhost
