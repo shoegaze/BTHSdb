@@ -3,6 +3,9 @@ Django based database for Brooklyn Technical High School (BTHS)
 
 ver. 1.0.0
 
+Go to /admin for the admin control panel
+Go to /database for the database (user login required)
+
 Current Features:
 -----------------
 * Users
@@ -22,3 +25,4 @@ Todo:
 * Better equipment details 
 * Better admin control panel
 * User sign up system
+* Redirect to /database/
