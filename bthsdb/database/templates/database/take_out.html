@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>BTHS-DB</title>
+		{% load static %}
+		<link rel="stylesheet" href="{% static 'styles/take_out.css' %}" />
+	</head>
+	<body>
+		<div id="inv-viewer">
+			<table>
+				<tr id="inv-tab-sorter">
+					<td>Equipment Name ▾</td>
+					<td>Subject ▾</td>
+					<td>Room Number ▾</td>
+					<td>Shelf ▾</td>
+					<td>Take Out</td>
+				</tr>
+				<div id="inv-container">
+					<!--
+					<tr class="inv-row">
+						<td>aaa</td>
+						<td>bbb</td>
+						<td>ccc</td>
+						<td>ddd</td>
+						<td><button class="takeout-button">Take out</button></td>
+					</tr>
+					-->
+					
+					<form action="{% url 'database:take_out' equipment.id %}" method="post">
+						{% csrf_token %}
+						{% for e in equipment %}
+						{% if e. %}
+						<tr class="inv-row">
+							<td>{{ e.name }}</td>
+							<td>{{ e.subject }}</td>
+							<td>{{ e.room }}</td>
+							<td>{{ e.shelf }}</td>
+							<td>
+								<input class="takeout-button" type="submit" value="Take Out" />
+							</td>
+						</tr>
+						{% endfor %}
+					</form>
+				</div>
+			</table>
+		</div>
+	</body>
+</html>

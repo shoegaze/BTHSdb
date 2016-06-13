@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>BTHS-DB</title>
+		{% load static %}
+		<link rel="stylesheet" href="{% static 'styles/display_all.css' %}" />
+	</head>
+	<body>
+		<div id="inv-viewer">
+			<table>
+				<tr id="inv-tab-sorter">
+					<th>Equipment Name ▾</th>
+					<th>Subject ▾</th>
+					<th>Room Number ▾</th>
+					<th>Shelf ▾</th>
+					<th>Give Back</th>
+				</tr>
+				<div id="inv-container">
+				{% for equipment in taken_out %}
+					<tr class="inv-row">
+						<td>{{ equipment.name }}</td>
+						<td>{{ equipment.subject }}</td>
+						<td>{{ equipment.room_number }}</td>
+						<td>{{ equipment.shelf_label }}</td>
+						<td>
+							<form action="./give_back" method="POST">
+								{% csrf_token %}
+								<input type="hidden" value="{{ equipment.id }}" name="equipment_id" />
+								<input class="giveout-button" type="submit" value="Give back" />
+							</form>
+						</td>
+					</tr>
+				{% endfor %}
+				</div>
+			</table>
+		</div>
+		
+		<script>
+			//@:TODO implement later
+			function sort_by(type){
+				//
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>BTHS-DB</title>
+		{% load static %}
+		<link rel="stylesheet" href="{% static 'styles/display_all.css' %}" />
+	</head>
+	<body>
+		<div id="inv-viewer">
+			<table class="sortable">
+				<tr id="inv-tab-sorter">
+					<th>Equipment Name ▾</th>
+					<th>Subject ▾</th>
+					<th>Room Number ▾</th>
+					<th>Shelf ▾</th>
+					<th>Take Out</th>
+				</tr>
+				<div id="inv-container">
+				{% for equipment in object_list %}
+					<tr class="inv-row">
+						<td>{{ equipment.name }}</td>
+						<td>{{ equipment.subject }}</td>
+						<td>{{ equipment.room_number }}</td>
+						<td>{{ equipment.shelf_label }}</td>
+						{% if not equipment.take_out_time %}
+						<td>
+							<form action="./take_out" method="POST">
+								{% csrf_token %}
+								
+								<input type="hidden" value="{{ equipment.id }}" name="equipment_id" />
+								<input class="takeout-button" type="submit" value="Take out" />
+							</form>
+						</td>
+						{% endif %}
+					</tr>
+				{% endfor %}
+				</div>
+			</table>
+		</div>
+		
+		<script>
+			function sort_by(type){
+				//
+			}
+		</script>
+	</body>
+</html>
