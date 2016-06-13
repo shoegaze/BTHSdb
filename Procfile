@@ -1,1 +1,1 @@
-web: gunicorn bthsdb.wsgi
+web: python bthsdb/manage.py runserver
