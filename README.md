@@ -1,7 +1,4 @@
-# BTHSdb
-Django based database for Brooklyn Technical High School (BTHS)
-
-current ver. 1.0.0
+# BTHSdb - ver. 1.0.0
 
 **IMPORTANT**: 
 
