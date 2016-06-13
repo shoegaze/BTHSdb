@@ -25,7 +25,9 @@ SECRET_KEY = 'g20#qinth9i=!#hfm($!m+^qm3lizmchzwu79q_1q^kqk1y1mw'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+	'https://bthsdb.herokuapp.com/',
+]
 
 
 # Application definition
