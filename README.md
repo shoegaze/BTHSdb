@@ -11,7 +11,7 @@ Branches:
 
 *master* is for complete --SAFE-- builds that the webhost will use.
 
-*development* is for... development builds, and has **DEBUG = True** and 
+*develop* is for... development builds, and has **DEBUG = True** and 
 **ALLOWED_HOSTS is empty** for local use. **This is the branch you should be working on, not the master branch.** 
 Once you feel like you can ship a new version, go to settings.py and set the above DEBUG = False and fill ALLOWED_HOSTS with whatever webhost name you decide on. Then **merge with the master branch.**
 
