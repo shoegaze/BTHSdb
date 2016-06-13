@@ -27,4 +27,4 @@ Todo:
 * Better admin control panel
 * User sign up system
 * Redirect to /database/
-* Upload to webhost
+* Upload to webhost (free hosting at heroku [https://bthsdb.herokuapp.com/])
